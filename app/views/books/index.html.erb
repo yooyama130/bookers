@@ -11,61 +11,21 @@
   </thead>
 
   <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.body %></td>
+        <td> <%= link_to "show", book_path(book.id) %> </td>
+        <td><a class="edit_31192" href="/books/31192/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure?" class="destroy_31192" rel="nofollow" data-method="delete" href="/books/31192">Destroy</a></td>
+      </tr>
+    <% end %>
     <tr>
       <td>リーダブルコード</td>
       <td>より良いコードを書くためのシンプルで実践的なテクニック</td>
       <td><a class="show_31192" href="/books/31192">Show</a></td>
       <td><a class="edit_31192" href="/books/31192/edit">Edit</a></td>
       <td><a data-confirm="Are you sure?" class="destroy_31192" rel="nofollow" data-method="delete" href="/books/31192">Destroy</a></td>
-    </tr>
-    <tr>
-      <td>トラブル知らずのシステム設計</td>
-      <td>システム設計の要点を図解で説明してくれます</td>
-      <td><a class="show_31193" href="/books/31193">Show</a></td>
-      <td><a class="edit_31193" href="/books/31193/edit">Edit</a></td>
-      <td><a data-confirm="Are you sure?" class="destroy_31193" rel="nofollow" data-method="delete" href="/books/31193">Destroy</a></td>
-    </tr>
-    <tr>
-      <td>たのしいRuby</td>
-      <td>Rubyの入門におすすめです</td>
-      <td><a class="show_31194" href="/books/31194">Show</a></td>
-      <td><a class="edit_31194" href="/books/31194/edit">Edit</a></td>
-      <td><a data-confirm="Are you sure?" class="destroy_31194" rel="nofollow" data-method="delete" href="/books/31194">Destroy</a></td>
-    </tr>
-    <tr>
-      <td>入門Git</td>
-      <td>gitについての基本操作から内部構造まで解説してくれます</td>
-      <td><a class="show_31195" href="/books/31195">Show</a></td>
-      <td><a class="edit_31195" href="/books/31195/edit">Edit</a></td>
-      <td><a data-confirm="Are you sure?" class="destroy_31195" rel="nofollow" data-method="delete" href="/books/31195">Destroy</a></td>
-    </tr>
-    <tr>
-      <td>アルゴリズム図鑑</td>
-      <td>アルゴリズムについてカラーイラストでしっかり解説してくれます</td>
-      <td><a class="show_31196" href="/books/31196">Show</a></td>
-      <td><a class="edit_31196" href="/books/31196/edit">Edit</a></td>
-      <td><a data-confirm="Are you sure?" class="destroy_31196" rel="nofollow" data-method="delete" href="/books/31196">Destroy</a></td>
-    </tr>
-    <tr>
-      <td>達人プログラマー</td>
-      <td>プログラマ入門者は必読！</td>
-      <td><a class="show_31197" href="/books/31197">Show</a></td>
-      <td><a class="edit_31197" href="/books/31197/edit">Edit</a></td>
-      <td><a data-confirm="Are you sure?" class="destroy_31197" rel="nofollow" data-method="delete" href="/books/31197">Destroy</a></td>
-    </tr>
-    <tr>
-      <td>データベース実践入門</td>
-      <td>効率的なSQL文を教えてくれます</td>
-      <td><a class="show_31198" href="/books/31198">Show</a></td>
-      <td><a class="edit_31198" href="/books/31198/edit">Edit</a></td>
-      <td><a data-confirm="Are you sure?" class="destroy_31198" rel="nofollow" data-method="delete" href="/books/31198">Destroy</a></td>
-    </tr>
-    <tr>
-      <td>test</td>
-      <td>test</td>
-      <td><a class="show_31199" href="/books/31199">Show</a></td>
-      <td><a class="edit_31199" href="/books/31199/edit">Edit</a></td>
-      <td><a data-confirm="Are you sure?" class="destroy_31199" rel="nofollow" data-method="delete" href="/books/31199">Destroy</a></td>
     </tr>
   </tbody>
 </table>
@@ -74,20 +34,11 @@
 <!--投稿フォーム-->
 <h2>New book</h2>
 
-<form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token"
-    value="Z+ZtyTPuaSnp7dEFbgJQGtlQ8Wrb6GXiW7F9Va7ZVIg3FTXO0YGbS4Y5RnTusu+uKwncGZ2Q8/xIpq7MIT43Xg==">
+<%= form_with model: @book, local:true do |f| %>
+  <p>Title</p>
+  <%= f.text_field :title %>
+  <p>Body</p>
+  <%= f.text_area :body %>
 
-  <div class="field">
-    <label for="book_title">Title</label>
-    <input class="book_title" type="text" name="book[title]" id="book_title">
-  </div>
-
-  <div class="field">
-    <label for="book_body">Body</label>
-    <textarea class="book_body" name="book[body]" id="book_body"></textarea>
-  </div>
-
-  <div class="actions">
-    <input type="submit" name="commit" value="Create Book" data-disable-with="Create Book">
-  </div>
-</form>
+  <%= f.submit 'Create Book' %>
+<% end %>
