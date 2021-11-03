@@ -1,1 +1,4 @@
-<h1>画面</h1>
+<p class = "basic-text"> <strong>Title: </strong><%=@book.title %></p>
+<p class = "basic-text"> <strong>Body: </strong><%= @book.body %></p>
+
+<p><%= link_to "Edit", edit_book_path(@book.id), class: "edit" %> | <%= link_to "Back", books_path, class: "back" %></p>

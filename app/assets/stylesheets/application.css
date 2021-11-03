@@ -18,7 +18,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #6c6b6b;
 }
 
 body {
@@ -43,12 +42,23 @@ h2 {
     font-weight: bold;
 }
 
-/*-----------------------------top----------------------------*/
-.top-text {
+.form{
+  margin-bottom : 10px;
+}
+
+.basic-text {
   font-size: 13px;
   margin: 33px;
 }
 
+.submit-button {
+  display:block;
+}
+
+
+
+
+/*-----------------------------top----------------------------*/
 .top-start {
   font-size: 13px;
   margin: 0 33px;
@@ -60,7 +70,7 @@ h2 {
   background-color: black;
 }
 
-/*-----------------------------book/index----------------------------*/
+/*-----------------------------books/index----------------------------*/
 table {
   display: table;
   border-collapse: separate;
@@ -97,4 +107,13 @@ td {
 
 .field label{
   display: block;
+}
+
+/*-----------------------------books/show----------------------------*/
+.edit{
+  color: #000000;
+}
+
+.back{
+  color: #666666;
 }
