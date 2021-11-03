@@ -29,6 +29,18 @@
 <!--投稿フォーム-->
 <h2>New book</h2>
 
+<!--エラーメッセージ-->
+<% if @book.errors.any? %>
+  <div class = "error_explanation">
+    <p class = "error_count-text"><%= @book.errors.count %> errors prohibited this book from being saved:</p>
+    <ul class = "errors_lists">
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_with model: @book, local:true do |f| %>
   <p>Title</p>
   <%= f.text_field :title, class: "form" %>

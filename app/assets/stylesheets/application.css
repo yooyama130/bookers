@@ -105,9 +105,36 @@ td {
   padding-right: 5px;
 }
 
+.error_explanation{
+  background-color: #f0f0f0;
+  margin-bottom : 20px;
+  border: 2px solid #cc0000;
+  width: 468px;
+  height: 133px;
+}
+
+.error_count-text{
+  display:block;
+  background-color: #cc0000;
+  color: #ffffff;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.errors_lists{
+  margin: 33px;
+}
+
+.errors_lists li{
+  font-size: 12px;
+}
+
 .field label{
   display: block;
 }
+
+
 
 /*-----------------------------books/show----------------------------*/
 .edit{
