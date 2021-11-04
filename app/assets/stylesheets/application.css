@@ -53,6 +53,8 @@ h2 {
 
 .submit-button {
   display:block;
+  margin-bottom: 10px;
+  padding: 1px 6px;
 }
 
 
@@ -135,12 +137,20 @@ td {
 }
 
 
-
-/*-----------------------------books/show----------------------------*/
-.edit{
+.link {
+  font-size: 13px;
+  display:inline-block;
   color: #000000;
 }
 
-.back{
+.link:visited{
   color: #666666;
 }
+
+.link:hover {
+  color: white;
+  background-color: black;
+}
+
+
+

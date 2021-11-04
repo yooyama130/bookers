@@ -20,3 +20,5 @@
 
   <%= f.submit 'Update Book', class: "submit-button", method: :update  %>
 <% end %>
+
+<p><%= link_to "Show", book_path(@book.id), class: "link" %> | <%= link_to "Back", books_path, class: "link" %></p>
